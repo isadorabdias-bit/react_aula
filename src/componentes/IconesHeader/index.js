@@ -1,16 +1,28 @@
-import './App.css';
-import IconesHeader from './componentes/IconesHeader';
-import Logo from './componentes/Logo';;
-import OpcoesHeader from './componentes/OpcoesHeader';
+import perfil from '../../imagens/perfil.svg';
+import sacola from '../../imagens/sacola.svg';
+import styled from 'styled-components';
 
-function  App(){
+const Icone = styled.li`
+  margin-right: 40px;
+  width:25px;
+`
+const Icones = styled.ul`
+   display: flex;
+   align-items: center;
+   margin-right: 10px;
+`
+
+const icones = [perfil, sacola];
+
+function IconesHeader() {
     return (
-        <div className='App'>
-            <header className='App-header'>
-                <Logo></Logo>
-                <OpcoesHeader></OpcoesHeader>
-                <IconesHeader></IconesHeader>
-            </header>
-        </div>
-    );
+        <Icones>
+            {icones.map((icone) => (
+                <Icone><img src={icone}></img></Icone>
+            ))}
+        </Icones>
+    )
 }
+
+export default IconesHeader;
+
